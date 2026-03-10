@@ -244,7 +244,7 @@ public class DESEncryption {
         System.out.println("  Key        : " + longToHex(key));
         System.out.println();
 
-        // ── Initial Permutation ──────────────────────
+        //Initial Permutation
         int[] ptBits = longToBits(plaintext);
         int[] ipBits = permute(ptBits, IP);
         System.out.println(" Initial Permutation (IP)");
@@ -278,7 +278,7 @@ public class DESEncryption {
         System.out.println("  Pre-output (R16 ++ L16) : " + bitsToHex(preOutput));
         System.out.println();
 
-        // ── Final Permutation ────────────────────────
+        //Final Permutation
         int[] cipherBits = permute(preOutput, IP_INV);
         long ciphertext = bitsToLong(cipherBits);
 
